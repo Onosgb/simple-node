@@ -11,16 +11,6 @@ jobs:
     steps:
       - checkout
       - run: echo "this is the build job"
-      - run:
-          -name: "Install Dependencies"
-          -command: |
-            npm install --save
-      - run:
-          -name: "registry"
-          -command: docker tag simple-node onosgb/simple-node
-      - run:
-          -name: "docker push"
-          -command: docker build -t onosgb/simple-node .
 
   test:
     docker:
