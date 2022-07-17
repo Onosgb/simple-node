@@ -17,12 +17,10 @@ jobs:
             npm install --save
       - run:
           -name: "registry"
-          -command: |
-          docker tag simple-node onosgb/simple-node
+          -command: docker tag simple-node onosgb/simple-node
       - run:
           -name: "docker push"
-          -command: |
-          docker build -t onosgb/simple-node .
+          -command: docker build -t onosgb/simple-node .
 
   test:
     docker:
